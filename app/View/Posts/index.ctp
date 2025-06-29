@@ -3,5 +3,5 @@
 <ul>
     <?php foreach ($posts as $post): ?>
         <li></li>
-    <?endforeach; ?>
+    <?php endforeach; ?>
 </ul>
