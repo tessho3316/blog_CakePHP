@@ -284,3 +284,23 @@ Stack Trace:
 #0 /var/www/html/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 /var/www/html/index.php(41): require('/var/www/html/a...')
 #2 {main}
+2025-06-30 00:05:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/cake.generic.css
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /var/www/html/index.php(41): require('/var/www/html/a...')
+#2 {main}
+2025-06-30 00:05:18 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /var/www/html/index.php(41): require('/var/www/html/a...')
+#2 {main}

@@ -4,7 +4,8 @@
     <?php foreach ($posts as $post): ?>
         <li>
             <?php
-            debug($post);
+            //debug($post);
+            echo h($post['Post']['title'])
             ?>
         </li>
     <?php endforeach; ?>
