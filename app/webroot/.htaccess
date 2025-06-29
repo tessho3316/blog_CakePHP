@@ -1,13 +1,12 @@
-# Uncomment the following to prevent the httpoxy vulnerability
-# See: https://httpoxy.org/
-#<IfModule mod_headers.c>
-#	RequestHeader unset Proxy
-#</IfModule>
+# MultiViewsオプションを無効にして、mod_rewriteとの衝突を防ぐ
+Options -MultiViews
+
+# シンボリックリンクを追跡する（サーバー設定によってはこちらが必要な場合がある）
+Options +FollowSymLinks
 
 <IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^ index.php [L]
+    RewriteEngine On
+    RewriteBase /blog/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [L]
 </IfModule>

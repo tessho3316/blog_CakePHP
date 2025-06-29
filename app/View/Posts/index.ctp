@@ -2,6 +2,10 @@
 
 <ul>
     <?php foreach ($posts as $post): ?>
-        <li></li>
+        <li>
+            <?php
+            debug($post);
+            ?>
+        </li>
     <?php endforeach; ?>
 </ul>

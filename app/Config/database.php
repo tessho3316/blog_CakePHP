@@ -69,7 +69,7 @@ class DATABASE_CONFIG {
     public $default = array(
         'datasource' => 'Database/Mysql',
         'persistent' => false,
-        'host' => 'localhost',
+        'host' => 'mysql80.redhare15.sakura.ne.jp',
         'login' => 'redhare15_cakephp_blog',
         'password' => '7urAwaW3',
         'database' => 'redhare15_cakephp_blog',
