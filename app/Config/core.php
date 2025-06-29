@@ -271,6 +271,7 @@
  * The class name and database used in CakePHP's
  * access control lists.
  */
+	date_default_timezone_set('Asia/Tokyo');
 	Configure::write('Acl.classname', 'DbAcl');
 	Configure::write('Acl.database', 'default');
 

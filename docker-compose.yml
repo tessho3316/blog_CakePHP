@@ -1,23 +1,19 @@
-version: '3.1'
-
 services:
   # Webサーバー (Apache + PHP 5.6)
   web:
-    # PHP 5.6 と Apache がセットになった公式イメージを使う
+    platform: linux/amd64
     image: php:5.6-apache
     volumes:
-      # 今いるフォルダ（プロジェクト全体）をコンテナ内の /var/www/html に同期させる
       - .:/var/www/html
     ports:
-      # PCの8000番ポートをコンテナの80番ポートに繋ぐ
       - "8000:80"
-    # Apacheのmod_rewriteを有効にする（.htaccessのために必須）
+    # ↓ ★このcommand行を修正しました！
     command: >
-      sh -c "a2enmod rewrite && apache2-foreground"
+      sh -c "a2enmod rewrite && docker-php-ext-install pdo pdo_mysql mysql && apache2-foreground"
 
   # データベース (MySQL 5.7)
   db:
-    # さくらサーバーで問題になった文字コード問題を避けるため、MySQL 5.7 を使う
+    platform: linux/amd64
     image: mysql:5.7
     restart: always
     environment:
@@ -26,15 +22,14 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: rootpassword
     volumes:
-      # データをPC側に保存して、コンテナを消してもデータが消えないようにする
       - db-data:/var/lib/mysql
 
   # データベース管理ツール (phpMyAdmin)
   phpmyadmin:
+    platform: linux/amd64
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      # PCの8080番ポートをphpMyAdminに繋ぐ
       - "8080:80"
     environment:
       PMA_HOST: db
