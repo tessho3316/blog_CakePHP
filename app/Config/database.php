@@ -70,9 +70,9 @@ class DATABASE_CONFIG {
         'datasource' => 'Database/Mysql',
         'persistent' => false,
         'host' => 'localhost',
-        'login' => 'dbuser',
+        'login' => 'redhare15_cakephp_blog',
         'password' => '7urAwaW3',
-        'database' => 'dotinstall_cakephp_blog',
+        'database' => 'redhare15_cakephp_blog',
         'prefix' => '',
         //'encoding' => 'utf8',
     );
