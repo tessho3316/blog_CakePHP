@@ -64,7 +64,7 @@
  * flags =>
  * A key/value array of driver specific connection options.
  */
-class DATABASE_CONFIG {
+/*class DATABASE_CONFIG {
 
     public $default = array(
         'datasource' => 'Database/Mysql',
@@ -75,7 +75,18 @@ class DATABASE_CONFIG {
         'database' => 'redhare15_cakephp_blog',
         'prefix' => '',
         //'encoding' => 'utf8',
-    );
+    );*/
+
+class DATABASE_CONFIG {
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host'     => 'db',        // ★サービス名'db'を指定
+		'login'    => 'user',      // ★docker-compose.ymlで指定したユーザー名
+		'password' => 'password',  // ★docker-compose.ymlで指定したパスワード
+		'database' => 'blog_local',// ★docker-compose.ymlで指定したDB名
+		'encoding' => 'utf8',
+	);
 
     public $test = array(
         'datasource' => 'Database/Mysql',
